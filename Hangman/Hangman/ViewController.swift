@@ -8,13 +8,41 @@
 
 import UIKit
 
-class ViewController: UIViewController {
+class ViewController: UIViewController, UITextFieldDelegate {
+    
+    
+    @IBOutlet weak var textView: UILabel!
+    
+    
+    @IBOutlet weak var userInput: UITextField!
+    
+    
 
   override func viewDidLoad() {
+    
+    userInput.delegate = self
+    
+    let randomWord = allTheWords.randomElement() ?? ""
+    var hiddenWord = ""
+    var arrayWord = [Character]()
+    
+
+    for _ in randomWord {
+        
+        hiddenWord += " _ "
+        
+        arrayWord.append("_")
+    }
+
+
+    textView.text = hiddenWord
+    
     super.viewDidLoad()
-    // Do any additional setup after loading the view, typically from a nib.
+    print(randomWord)
+    print(hiddenWord)
+    view.backgroundColor = .red
   }
 
-
+    
 }
 
