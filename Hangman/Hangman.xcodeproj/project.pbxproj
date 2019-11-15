@@ -13,6 +13,8 @@
 		57FCB5FB21A36D3E00163B8E /* Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = 57FCB5FA21A36D3E00163B8E /* Assets.xcassets */; };
 		57FCB5FE21A36D3E00163B8E /* LaunchScreen.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 57FCB5FC21A36D3E00163B8E /* LaunchScreen.storyboard */; };
 		BE27054F237CFA7B00EE0CF8 /* Words.swift in Sources */ = {isa = PBXBuildFile; fileRef = BE27054E237CFA7B00EE0CF8 /* Words.swift */; };
+		BE3F5506237E10C2003A643F /* hangmanBrain .swift in Sources */ = {isa = PBXBuildFile; fileRef = BE3F5505237E10C2003A643F /* hangmanBrain .swift */; };
+		BE3F5508237EF020003A643F /* HangmanViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = BE3F5507237EF020003A643F /* HangmanViewController.swift */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXFileReference section */
@@ -24,6 +26,8 @@
 		57FCB5FD21A36D3E00163B8E /* Base */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; name = Base; path = Base.lproj/LaunchScreen.storyboard; sourceTree = "<group>"; };
 		57FCB5FF21A36D3E00163B8E /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
 		BE27054E237CFA7B00EE0CF8 /* Words.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Words.swift; sourceTree = "<group>"; };
+		BE3F5505237E10C2003A643F /* hangmanBrain .swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = "hangmanBrain .swift"; sourceTree = "<group>"; };
+		BE3F5507237EF020003A643F /* HangmanViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = HangmanViewController.swift; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -60,6 +64,8 @@
 				BE27054E237CFA7B00EE0CF8 /* Words.swift */,
 				57FCB5F521A36D3D00163B8E /* ViewController.swift */,
 				57FCB5F721A36D3D00163B8E /* Main.storyboard */,
+				BE3F5507237EF020003A643F /* HangmanViewController.swift */,
+				BE3F5505237E10C2003A643F /* hangmanBrain .swift */,
 				57FCB5FA21A36D3E00163B8E /* Assets.xcassets */,
 				57FCB5FC21A36D3E00163B8E /* LaunchScreen.storyboard */,
 				57FCB5FF21A36D3E00163B8E /* Info.plist */,
@@ -138,9 +144,11 @@
 			isa = PBXSourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				BE3F5506237E10C2003A643F /* hangmanBrain .swift in Sources */,
 				BE27054F237CFA7B00EE0CF8 /* Words.swift in Sources */,
 				57FCB5F621A36D3D00163B8E /* ViewController.swift in Sources */,
 				57FCB5F421A36D3D00163B8E /* AppDelegate.swift in Sources */,
+				BE3F5508237EF020003A643F /* HangmanViewController.swift in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};

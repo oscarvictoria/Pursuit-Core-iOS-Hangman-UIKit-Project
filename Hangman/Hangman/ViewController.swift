@@ -12,61 +12,70 @@ class ViewController: UIViewController, UITextFieldDelegate {
     
     
     @IBOutlet weak var textView: UILabel!
-    
-    
     @IBOutlet weak var userInput: UITextField!
-    
-    
-    
-    @IBOutlet weak var imageView: UIImageView!
-    
-    
-    
 
-  override func viewDidLoad() {
+    var guessWord = HangManBrain()
     
-    userInput.delegate = self
-    
-    let randomWord = allTheWords.randomElement() ?? ""
-    var hiddenWord = ""
-    var arrayWord = [Character]()
-    
-//    var image : UIImage = UIImage(named:"hang1")!
-    
-    imageView.image = UIImage(named: "hang1")
-
-    for _ in randomWord {
-        
-        hiddenWord += " _ "
-        
-        arrayWord.append("_")
-    }
-
-
-    textView.text = hiddenWord
-    
-    
-    let images = ["hang1","hang2","hang3", "hang4","hang5","hang6","hang7"]
-    
+//    var assignedWord = HangManBrain()
    
     
-    
-    super.viewDidLoad()
-    print(randomWord)
-    print(hiddenWord)
-    view.backgroundColor = .red
-  }
-
-
 
     
     
+    
+    override func viewDidLoad() {
+        userInput.delegate = self
+
+        //dashes.joined(seperator: " ")
+    
+     
+        //imageView.image = UIImage(named: "hang1")
+        super.viewDidLoad()
+        view.backgroundColor = .red
+        
+    }
+    
+    @IBAction func userRespone(_ sender: UIButton) {
+        
+    }
+    
+    
+    
+    
+    @IBAction func textFieldAction(_ sender: UITextField) {
+        
+    }
+    
+    
+    override func prepare(for segue: UIStoryboardSegue, sender: Any?) {
+        print("prepareForSegue")
+        guard let viewController = segue.destination as? HangmanViewController else {
+                   return
+               }
+        viewController.game = guessWord
+    }
     
     
     func textFieldShouldReturn(_ textField: UITextField) -> Bool {
-        userInput.resignFirstResponder()
+        guessWord.userOneWord = userInput.text ?? ""
+        textView.text = userInput.text
+        userInput.text = ""
         return true
+        
     }
+    
+    
+       func textField(_ textField: UITextField, shouldChangeCharactersIn range: NSRange, replacementString string: String) -> Bool
+       {
+        let characterLimit = 12
+        let newText = NSString(string: textField.text!).replacingCharacters(in: range, with: string)
+           let numberOfChars = newText.count
+           
+           return numberOfChars < characterLimit
+    }
+    
+
+   
     
 }
 
