@@ -8,12 +8,17 @@
 
 import UIKit
 
-class HangmanViewController: UIViewController {
+class HangmanViewController: UIViewController, UITextFieldDelegate {
     
     @IBOutlet weak var imageView: UIImageView!
     
 
     @IBOutlet weak var newTextLabel: UILabel!
+
+    
+    @IBOutlet weak var userTwoGuess: UITextField!
+    
+    
     
     var game = HangManBrain()
     
@@ -24,11 +29,12 @@ class HangmanViewController: UIViewController {
 
     override func viewDidLoad() {
         super.viewDidLoad()
+        userTwoGuess.delegate = self
         imageView.image = UIImage(named: "hang1")
-        
         //newTextLabel.text = newText
         let dash = HangManBrain.dashes(word: game.userOneWord)
         newTextLabel.text = dash.joined(separator: " ")
+        
 
         // Do any additional setup after loading the view.
     }
@@ -43,5 +49,13 @@ class HangmanViewController: UIViewController {
         // Pass the selected object to the new view controller.
     }
     */
+
+    func textFieldShouldReturn(_ textField: UITextField) -> Bool {
+        textField.resignFirstResponder()
+        userTwoGuess.text = ""
+        return true
+    }
+    
+
 
 }
